@@ -1,19 +1,19 @@
-LRU Cache - A Simple and Efficient Caching With Time-To-Live expiry feature in Go
+LRU Cache - A Simple and Efficient Caching With Time-To-Live Expiry in Go
 
-An LRU Cache storing frequently used data and evicting older or unused data automatically.
+An LRU Cache that stores frequently used data and automatically evicts older or unused data, with an added Time-To-Live (TTL) expiration feature for precise control over cached items.
 
-🚀 What It Does
+**🚀 What It Does**
 
-Core Features:
-- Stores data and removes the least recently used items when out of give caching capacity.
-- Manages memory effectively by evicting old data.
-- Handles simultaneous requests without issues like race condition.
+**Core Features**
+- Smart Caching: Stores data and removes the least recently used items when the cache reaches its capacity.
+- Time-To-Live Expiry: Automatically removes keys that have expired based on their TTL, ensuring fresh data.
+- Memory Efficiency: Evicts old data to optimize memory usage.
+- Thread-Safe Design: Handles simultaneous requests without race conditions.
 
-Functionality:
-- Retrieves and updates data in no time O(1) time-complexity for lookups and insertion in doubly linked list.
-- Customize you cache size limit.
-- Designed to perform well under many requests.
 
-Easy to Use:
-- Clean and organized code that’s easy to understand and modify.
-- Comes with Doubly Linked List tests to ensure it works as expected.
+**Functionality**
+- Fast Operations: Retrieves and updates data with O(1) time complexity using a combination of a hash map and a doubly linked list.
+- Active Expiration: Uses a Go ticker to periodically remove expired keys, running cleanup tasks concurrently for better performance.
+- Dynamic Expiration Capacity: Adjusts the frequency of expiry checks based on workload, ensuring scalability.
+- Customizable Cache: Easily configure the cache size and expiration behavior to suit application needs.
+- High Performance Under Load: Efficiently handles large numbers of read and write operations.
